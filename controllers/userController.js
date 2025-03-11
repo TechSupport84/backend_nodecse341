@@ -15,3 +15,19 @@ export const getUsers = async (req, res) => {
 };
 
 
+export const getContactById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const contact = await User.findById(id);
+        
+        if (!contact) {
+            return res.json({ message: "Contact not found" });
+        }
+  
+
+    } catch (error) {
+        console.error("Error retrieving contact:", error);
+        res.json({ message: "Internal Server Error" });
+    }
+};
+
