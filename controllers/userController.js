@@ -1,5 +1,4 @@
-import express from "express";
-import mongoose from "mongoose";
+
 import { User } from "../models/user.model.js";
 
 export const getUsers = async (req, res) => {
@@ -24,7 +23,7 @@ export const getContactById = async (req, res) => {
             return res.json({ message: "Contact not found" });
         }
   
-
+       res.status(200).json(contact)
     } catch (error) {
         console.error("Error retrieving contact:", error);
         res.json({ message: "Internal Server Error" });
