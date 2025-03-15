@@ -5,7 +5,7 @@ import userRouter from "./user.route.js";
 const routes  = express.Router()
 
 routes.use('/', swagger);
-routes.use('/temples', userRouter);
+routes.use('/Contacts', userRouter);
 routes.use(
   '/',
   (docData = (req, res) => {
